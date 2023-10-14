@@ -43,6 +43,7 @@
 
     <modules>
         <module>demo</module>
+        <module>security</module>
     </modules>
 
 </project>
