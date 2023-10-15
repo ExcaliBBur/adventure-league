@@ -2,7 +2,7 @@ import man from "../../../image/man.svg";
 export function MainContent() {
     return (
         <div>
-            <div className="w-[1600] h-[921] bg-[url('./image/net.svg')] flex">
+            <div className="w-[1600] h-[921] bg-[url('./image/net.svg')] bg-cover flex">
                 <div className="animate-text_ani translate-x-[-150%]">
                     <h1 className="font-['3270'] text-white text-left leading-[normal] text-[120px] pt-[120px] pl-[90px]">
                         Поступление

@@ -1,5 +1,6 @@
-import main_logo from '../../../image/main_logo.svg';
-export function HeaderMain() {
+import main_logo from "../../../image/main_logo.svg";
+
+export function HeaderPersonal() {
     return (
         <header className="translate-y-[-150%] animate-ani">
             <div className="flex w-[1850px] h-[6.6875rem] rounded-[25px]">
@@ -28,7 +29,7 @@ export function HeaderMain() {
                     <span>
                         Новости
                     </span>
-                </button>
+                    </button>
                 </div>
                 <div className="flex mb-auto ml-auto mt-auto justify-center align-middle text-center">
                     <div className="text-white font-['Montserrat'] text-4xl leading-[normal]">
@@ -42,4 +43,4 @@ export function HeaderMain() {
     )
 }
 
-export default HeaderMain;
+export default HeaderPersonal
