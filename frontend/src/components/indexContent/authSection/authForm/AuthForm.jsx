@@ -2,23 +2,33 @@ import React from 'react';
 import {useFormik} from 'formik';
 import auth_logo from "../../../../image/auth_logo.svg";
 
+const validate = values => {
+    const errors = {};
+    if (!values.username) {
+        errors.username = 'Поле обязательное для заполнения!';
+    } else if (values.username.length > 15) {
+        errors.username = 'Должно быть меньше 15 символов';
+    }
+
+    if (!values.password) {
+        errors.password = 'Поле обязательное для заполнения!';
+    } else if (values.password.length > 20) {
+        errors.password = 'Должно быть меньше 20 символов';
+    }
+
+    return errors;
+};
 
 const AuthForm = (props) => {
     const formik = useFormik({
         initialValues: {
             username: '',
-            password: '',
-            newAccount: false
+            password: ''
         },
+        validate,
         onSubmit: values => {
-            if (values.newAccount) {
-                props.register(values.username, values.password);
-            } else {
-                props.login(values.username, values.password);
-            }
-        },
-        validateOnChange: false,
-        validateOnBlur: false
+            alert(JSON.stringify(values, null, 2));
+        }
     });
 
     return (
@@ -33,33 +43,33 @@ const AuthForm = (props) => {
                 <div className="ml-[138px] mr-[138px] mt-[25px]">
                     <p styleName="text-field">
                         <label className="text-white font-['Montserrat'] text-[24px] leading-[normal] ml-[50px]"
-                               styleName="text-field__label  " htmlFor="username">
+                               htmlFor="username">
                             Введите логин или E-mail
                         </label>
                     </p>
                     <input className="flex-shrink-0 w-[500px] h-[2.5rem] rounded-[50px] bg-[#fefefe]" id="username"
                            type="text" name="username"
                            value={formik.values.username} onChange={formik.handleChange}/>
+                    {formik.errors.username ? <div>{formik.errors.username}</div> : null}
                 </div>
+
                 <div className="ml-[138px] mr-[138px] mt-[25px]">
                     <p styleName="text-field">
                         <label className="text-white font-['Montserrat'] text-[24px] leading-[normal] ml-[25px]"
-                               styleName="text-field__label m-[100px]" htmlFor="password">
+                               htmlFor="password">
                             Введите пароль
                         </label>
                     </p>
                     <input className="flex-shrink-0 w-[500px] h-[2.5rem] rounded-[50px] bg-[#fefefe] ml-[10px]"
                            id="password" type="text" name="password"
                            value={formik.values.password} onChange={formik.handleChange}/>
+                    {formik.errors.password ? <div>{formik.errors.password}</div> : null}
                 </div>
 
 
-
-
-                <div className="">
+                <div>
                     <input className="text-black font-['Montserrat'] text-5xl font-bold leading-[normal] ml-auto mr-auto w-[750px] mt-[25px]"
-                           id="enter-check" value={'Вход'} type="button" name="newAccount"
-                           checked={formik.values.newAccount} onChange={formik.handleChange}/>
+                           id="enter-check" value={'Вход'} type="submit" name="newAccount"/>
                 </div>
 
                 <div className="enter">
