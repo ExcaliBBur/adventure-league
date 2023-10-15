@@ -22,49 +22,50 @@ const AuthForm = (props) => {
     });
 
     return (
-        <div styleName="form-container">
+        <div className="w-[750px] mb-[125px]">
             <form onSubmit={formik.handleSubmit}>
-
                 <div className="flex m-auto justify-center align-middle text-center">
-                    <div
-                        className="text-white font-['Montserrat'] text-8xl font-bold leading-[normal] text-center ">
+                    <div className="text-white font-['Montserrat'] text-[48px] font-bold leading-[normal] text-center ml-[138px] mt-[100px] flex mr-[138px]">
                         Совкомбанк ID
+                        <img className="w-[50px] ml-[10px]" src={auth_logo}/>
                     </div>
-                    <img className="w-[100px] ml-[20px]" src={auth_logo}/>
                 </div>
-
-                <p styleName="text-field">
-                    <label className="text-white font-['Montserrat'] text-5xl leading-[normal]"
-                           styleName="text-field__label  " htmlFor="username">
-                        Введите логин или E-mail
-                    </label>
-                    <input className="flex-shrink-0 w-[500px] h-[5rem] rounded-[50px] bg-[#fefefe]" id="username"
+                <div className="ml-[138px] mr-[138px] mt-[25px]">
+                    <p styleName="text-field">
+                        <label className="text-white font-['Montserrat'] text-[24px] leading-[normal] ml-[50px]"
+                               styleName="text-field__label  " htmlFor="username">
+                            Введите логин или E-mail
+                        </label>
+                    </p>
+                    <input className="flex-shrink-0 w-[500px] h-[2.5rem] rounded-[50px] bg-[#fefefe]" id="username"
                            type="text" name="username"
                            value={formik.values.username} onChange={formik.handleChange}/>
-                </p>
-                <br/>
-
-                <p styleName="text-field">
-                    <label className="text-white font-['Montserrat'] text-5xl leading-[normal]"
-                           styleName="text-field__label m-[100px]" htmlFor="password">
-                        Введите пароль
-                    </label>
-                    <input className="flex-shrink-0 w-[500px] h-[5rem] rounded-[50px] bg-[#fefefe] ml-[200px]"
+                </div>
+                <div className="ml-[138px] mr-[138px] mt-[25px]">
+                    <p styleName="text-field">
+                        <label className="text-white font-['Montserrat'] text-[24px] leading-[normal] ml-[25px]"
+                               styleName="text-field__label m-[100px]" htmlFor="password">
+                            Введите пароль
+                        </label>
+                    </p>
+                    <input className="flex-shrink-0 w-[500px] h-[2.5rem] rounded-[50px] bg-[#fefefe] ml-[10px]"
                            id="password" type="text" name="password"
                            value={formik.values.password} onChange={formik.handleChange}/>
-                </p>
+                </div>
 
 
-                <div styleName="enter">
-                    <input className="text-black font-['Montserrat'] text-5xl font-bold leading-[normal] pl-[450px]"
+
+
+                <div className="">
+                    <input className="text-black font-['Montserrat'] text-5xl font-bold leading-[normal] ml-auto mr-auto w-[750px] mt-[25px]"
                            id="enter-check" value={'Вход'} type="button" name="newAccount"
                            checked={formik.values.newAccount} onChange={formik.handleChange}/>
                 </div>
 
-                <div styleName="enter">
+                <div className="enter">
                     <input
-                        class="text-white text-center font-['Montserrat'] text-5xl leading-[normal] underline uppercase pl-[330px]"
-                        value={'Авторизация'} type="button" name="registerAccount"
+                        class="text-white text-center font-['Montserrat'] text-5xl leading-[normal] underline uppercase ml-auto mr-auto w-[750px] mt-[25px] mb-[25px]"
+                        value={'Регистрация'} type="button" name="registerAccount"
                         checked={formik.values.newAccount} onChange={formik.handleChange}/>
                 </div>
             </form>
