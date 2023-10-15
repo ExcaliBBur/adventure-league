@@ -584,80 +584,92 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.m-5 {
-  margin: 1.25rem;
-}
-
-.m-20 {
-  margin: 5rem;
-}
-
-.m-\[120\] {
-  margin: 120;
-}
-
-.m-\[120px\] {
-  margin: 120px;
-}
-
-.m-\[20\] {
-  margin: 20;
-}
-
-.m-\[20px\] {
-  margin: 20px;
-}
-
 .m-\[100px\] {
   margin: 100px;
 }
 
-.mt-4 {
-  margin-top: 1rem;
+.m-auto {
+  margin: auto;
 }
 
-.mt-\[120px\] {
-  margin-top: 120px;
-}
-
-.ml-\[100px\] {
-  margin-left: 100px;
-}
-
-.ml-\[10px\] {
-  margin-left: 10px;
-}
-
-.ml-\[1px\] {
-  margin-left: 1px;
-}
-
-.mr-\[20px\] {
-  margin-right: 20px;
-}
-
-.mr-\[10px\] {
-  margin-right: 10px;
-}
-
-.ml-\[330px\] {
-  margin-left: 330px;
+.mb-auto {
+  margin-bottom: auto;
 }
 
 .ml-\[200px\] {
   margin-left: 200px;
 }
 
+.ml-\[300px\] {
+  margin-left: 300px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mt-\[150px\] {
+  margin-top: 150px;
+}
+
+.mt-\[50px\] {
+  margin-top: 50px;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.ml-\[20px\] {
+  margin-left: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-\[4\.3125rem\] {
+  height: 4.3125rem;
+}
+
+.h-\[4\.375rem\] {
+  height: 4.375rem;
+}
+
 .h-\[5rem\] {
   height: 5rem;
 }
 
-.h-\[7\.125rem\] {
-  height: 7.125rem;
+.h-\[6\.6875rem\] {
+  height: 6.6875rem;
 }
 
-.w-\[1143px\] {
-  width: 1143px;
+.h-\[921\] {
+  height: 921;
+}
+
+.w-\[12\.6875rem\] {
+  width: 12.6875rem;
+}
+
+.w-\[1600\] {
+  width: 1600;
+}
+
+.w-\[1600px\] {
+  width: 1600px;
+}
+
+.w-\[17\.5rem\] {
+  width: 17.5rem;
+}
+
+.w-\[18\.5rem\] {
+  width: 18.5rem;
+}
+
+.w-\[23\.75rem\] {
+  width: 23.75rem;
 }
 
 .w-\[500px\] {
@@ -668,28 +680,57 @@ video {
   width: 792px;
 }
 
+.w-\[9\.125rem\] {
+  width: 9.125rem;
+}
+
+.w-\[592px\] {
+  width: 592px;
+}
+
+.w-\[992px\] {
+  width: 992px;
+}
+
+.w-\[1092px\] {
+  width: 1092px;
+}
+
+.w-\[160px\] {
+  width: 160px;
+}
+
+.w-\[100px\] {
+  width: 100px;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.rounded-\[0\.9375rem\] {
+  border-radius: 0.9375rem;
+}
+
+.rounded-\[15px\] {
+  border-radius: 15px;
+}
+
+.rounded-\[25px\] {
+  border-radius: 25px;
 }
 
 .rounded-\[50px\] {
   border-radius: 50px;
 }
 
-.rounded-\[10\] {
-  border-radius: 10;
-}
-
-.rounded-\[10px\] {
-  border-radius: 10px;
-}
-
-.rounded-\[67px\] {
-  border-radius: 67px;
-}
-
-.rounded-\[15px\] {
-  border-radius: 15px;
+.bg-\[\#014e94\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(1 78 148 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#fefefe\] {
@@ -697,68 +738,66 @@ video {
   background-color: rgb(254 254 254 / var(--tw-bg-opacity));
 }
 
-.p-\[10px\] {
-  padding: 10px;
-}
-
-.p-\[100px\] {
-  padding: 100px;
-}
-
-.p-\[20px\] {
-  padding: 20px;
-}
-
-.p-\[30px\] {
-  padding: 30px;
+.bg-\[url\(\'\.\/image\/net\.svg\'\)\] {
+  background-image: url('./image/net.svg');
 }
 
 .p-\[40px\] {
   padding: 40px;
 }
 
-.pl-\[100px\] {
-  padding-left: 100px;
-}
-
-.pl-\[200px\] {
-  padding-left: 200px;
-}
-
-.pl-\[400px\] {
-  padding-left: 400px;
-}
-
-.pl-\[500px\] {
-  padding-left: 500px;
+.pl-\[330px\] {
+  padding-left: 330px;
 }
 
 .pl-\[450px\] {
   padding-left: 450px;
 }
 
-.pl-\[350px\] {
-  padding-left: 350px;
+.pl-\[90px\] {
+  padding-left: 90px;
 }
 
-.pl-\[300px\] {
-  padding-left: 300px;
+.pt-\[120px\] {
+  padding-top: 120px;
 }
 
-.pl-\[320px\] {
-  padding-left: 320px;
-}
-
-.pl-\[330px\] {
-  padding-left: 330px;
+.text-left {
+  text-align: left;
 }
 
 .text-center {
   text-align: center;
 }
 
+.align-middle {
+  vertical-align: middle;
+}
+
+.font-\[\'3270\'\] {
+  font-family: '3270';
+}
+
 .font-\[\'Montserrat\'\] {
   font-family: 'Montserrat';
+}
+
+.font-\[\'Montserrat-SemiBold\'\] {
+  font-family: 'Montserrat-SemiBold';
+}
+
+.font-\[\'Montserrat-Thin\'\] {
+  font-family: 'Montserrat-Thin';
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-5xl {
@@ -769,6 +808,14 @@ video {
 .text-8xl {
   font-size: 6rem;
   line-height: 1;
+}
+
+.text-\[120px\] {
+  font-size: 120px;
+}
+
+.text-\[2\.6rem\] {
+  font-size: 2.6rem;
 }
 
 .font-bold {
@@ -797,6 +844,10 @@ video {
   text-decoration-line: underline;
 }
 
+.opacity-\[0\.45\] {
+  opacity: 0.45;
+}
+
 .content-section_auth {
   background: #0086FF;
 }
@@ -808,8 +859,52 @@ video {
   align-items: center;
 }
 
+@font-face {
+  font-family: 'Montserrat';
+
+  src: url("./fonts/Montserrat.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat-SemiBold';
+
+  src: url("./fonts/Montserrat-SemiBold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Thin';
+
+  src: url("./fonts/Montserrat-Thin.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: '3270';
+
+  src: url("./fonts/3270.ttf") format('truetype');
+}
+
 .App {
   background: #060919;
-  min-height: 100vh
+  min-height: 100vh;
+}
+
+.font-\[\'Montserrat\'\] {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-\[\'Montserrat-Semi\'\] {
+  font-family: 'Montserrat-Semi', sans-serif;
+}
+
+.font-\[\'Montserrat-SemiBold\'\] {
+  font-family: 'Montserrat-SemiBold', sans-serif;
+}
+
+.font-\[\'Montserrat-Thin\'\] {
+  font-family: 'Montserrat-Thin', sans-serif;
+}
+
+.font-\[\'3270\'\] {
+  font-family: '3270', sans-serif;
 }
 
