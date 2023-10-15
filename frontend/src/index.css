@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url("./fonts/Montserrat.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url("./fonts/Montserrat-SemiBold.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Thin';
+    src: url("./fonts/Montserrat-Thin.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: '3270';
+    src: url("./fonts/3270.ttf") format('truetype');
+}
+
+.App {
+    background: #060919;
+    min-height: 100vh;
+}
+
+.font-\[\'Montserrat\'\] {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-\[\'Montserrat-Semi\'\] {
+    font-family: 'Montserrat-Semi', sans-serif;
+}
+
+.font-\[\'Montserrat-SemiBold\'\] {
+    font-family: 'Montserrat-SemiBold', sans-serif;
+}
+
+.font-\[\'Montserrat-Thin\'\] {
+    font-family: 'Montserrat-Thin', sans-serif;
+}
+
+.font-\[\'3270\'\] {
+    font-family: '3270', sans-serif;
+}

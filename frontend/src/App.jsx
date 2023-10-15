@@ -1,12 +1,10 @@
-import IndexContent from './components/indexContent/IndexContent';
+import {MainPage} from "./components/mainPage/MainPage";
+import "./style.css";
 
 function App() {
     return (
         <div className="App">
-           <IndexContent />
-            {/*<label>*/}
-            {/*    привет мир*/}
-            {/*</label>*/}
+           <MainPage />
         </div>
     );
 }
