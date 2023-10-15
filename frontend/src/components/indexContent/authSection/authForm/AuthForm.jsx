@@ -22,8 +22,13 @@ const AuthForm = (props) => {
     return (
         <div styleName="form-container">
             <form onSubmit={formik.handleSubmit}>
+
+                <div className="w-[792px] text-white font-['Montserrat'] text-8xl font-bold leading-[normal] text-center p-[40px]">
+                    Совкомбанк ID
+                </div>
+
                 <p styleName="text-field">
-                    <label className="flex-shrink-0 w-[1143px] h-[7.125rem] rounded-[50px] bg-[#fefefe]" styleName="text-field__label" htmlFor="username">
+                    <label className="text-white font-['Montserrat'] text-5xl leading-[normal]" styleName="text-field__label  " htmlFor="username">
                         Введите логин или E-mail
                     </label>
                     <input className="flex-shrink-0 w-[500px] h-[5rem] rounded-[50px] bg-[#fefefe]"  id="username" type="text" name="username"
@@ -32,21 +37,21 @@ const AuthForm = (props) => {
                 <br />
 
                 <p styleName="text-field">
-                    <label className="flex-shrink-0 w-[1143px] h-[7.125rem] rounded-[50px] bg-[#fefefe]" styleName="text-field__label" htmlFor="password">
+                    <label className="text-white font-['Montserrat'] text-5xl leading-[normal]" styleName="text-field__label m-[100px]" htmlFor="password">
                         Введите пароль
                     </label>
-                    <input className="flex-shrink-0 w-[1143px] h-[7.125rem] rounded-[50px] bg-[#fefefe]" id="password" type="text" name="password"
+                    <input className="flex-shrink-0 w-[500px] h-[5rem] rounded-[50px] bg-[#fefefe] ml-[200px]" id="password" type="text" name="password"
                            value={formik.values.password} onChange={formik.handleChange} />
                 </p>
 
 
                 <div styleName="enter">
-                    <input className="text-black font-['Montserrat'] text-5xl font-bold leading-[normal]" id="enter-check" value={'Вход'} type="button" name="newAccount"
+                    <input className="text-black font-['Montserrat'] text-5xl font-bold leading-[normal] pl-[450px]" id="enter-check" value={'Вход'} type="button" name="newAccount"
                            checked={formik.values.newAccount} onChange={formik.handleChange} />
                 </div>
 
                 <div styleName="enter">
-                    <input class="text-white text-center font-['Montserrat'] text-5xl leading-[normal] underline uppercase" value={'Авторизация'} type="button" name="registerAccount"
+                    <input class="text-white text-center font-['Montserrat'] text-5xl leading-[normal] underline uppercase pl-[330px]" value={'Авторизация'} type="button" name="registerAccount"
                            checked={formik.values.newAccount} onChange={formik.handleChange} />
                 </div>
             </form>

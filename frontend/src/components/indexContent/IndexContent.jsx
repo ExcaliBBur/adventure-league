@@ -3,7 +3,7 @@ import AuthSection from './authSection/AuthSection'
 
 const IndexContent = (props) => {
     return (
-        <main styleName="main-container">
+        <main className="main-container">
             <label>
                 <AuthSection/>
             </label>
