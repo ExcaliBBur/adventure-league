@@ -1,5 +1,5 @@
-import arrow1 from "../../../image/Arrow1.svg"
-import arrow2 from "../../../image/Arrow2.svg"
+import arrowRight from "../../../image/ArrowRight.svg"
+import arrowLeft from "../../../image/ArrowLeft.svg"
 export function News() {
     return (
         <div>
@@ -24,7 +24,7 @@ export function News() {
             <div className="flex justify-center">
                 <div>
                     <button>
-                        <img src={arrow2} className="mt-5 mr-2"/>
+                        <img src={arrowLeft} className="mt-5 mr-2"/>
                     </button>
                 </div>
                 <div>
@@ -34,7 +34,7 @@ export function News() {
                 </div>
                 <div>
                     <button>
-                        <img src={arrow1} className="mt-5 ml-2)"/>
+                        <img src={arrowRight} className="mt-5 ml-2)"/>
                     </button>
                 </div>
             </div>

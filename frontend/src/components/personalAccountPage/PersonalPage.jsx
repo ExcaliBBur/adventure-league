@@ -1,7 +1,13 @@
 import HeaderPersonal from "./personalContent/HeaderPersonal";
+import StudentActivity from "./personalContent/StudentActivity";
+import Test from "./personalContent/Test";
 export function PersonalPage() {
     return (
-        <HeaderPersonal/>
+        <div>
+            <HeaderPersonal/>
+            <StudentActivity />
+            <Test />
+        </div>
     )
 }
 
