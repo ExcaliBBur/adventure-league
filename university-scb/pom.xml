@@ -60,6 +60,8 @@
         <module>security</module>
         <module>discovery-server</module>
         <module>api-gateway</module>
+        <module>account</module>
+        <module>utils</module>
     </modules>
 
 </project>

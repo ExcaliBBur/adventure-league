@@ -1,12 +1,12 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jwt_security
+    url: jdbc:postgresql://localhost:5432/adventure-league
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -14,10 +14,8 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   application:
-    name: security-service
-
-jwt:
-  secret: B6E5061FADAD40CCAEBDD0F4B3EB3DEE3F4FCE86695FA0076BA9E0A894A53140
+    name:
+      account-service
 
 eureka:
   client:
@@ -26,3 +24,7 @@ eureka:
 
 server:
   port: 0
+
+jwt:
+  secret: B6E5061FADAD40CCAEBDD0F4B3EB3DEE3F4FCE86695FA0076BA9E0A894A53140
+  expiration: 3000000
