@@ -59,6 +59,8 @@
         <module>demo</module>
         <module>discovery-server</module>
         <module>api-gateway</module>
+        <module>security</module>
+        <module>account</module>
     </modules>
 
 </project>
