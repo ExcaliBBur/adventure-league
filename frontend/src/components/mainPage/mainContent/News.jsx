@@ -4,7 +4,7 @@ export function News() {
     return (
         <div>
             <div className="flex w-[100%]">
-                <h1 className="text-[48px] text-white font-['Montserrat'] ml-[45px]">
+                <h1 id="news" className="text-[48px] text-white font-['Montserrat'] ml-[45px]">
                     Новости
                 </h1>
                 <button className="ml-[1400px] mt-5 w-[11.75rem] h-[3.3125rem] rounded-[0.9375rem] bg-[#014e94] hover:bg-[#F11312] duration-300">

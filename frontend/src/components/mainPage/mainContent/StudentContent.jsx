@@ -3,12 +3,12 @@ export function StudentContent() {
         <div>
             <div className="flex">
                 <div>
-                    <h1 className="text-[48px] text-white font-['Montserrat'] ml-[45px]">
+                    <h1 id="entrant" className="text-[48px] text-white font-['Montserrat'] ml-[45px]">
                         Абитуриентам
                     </h1>
                 </div>
                 <div>
-                    <h1 className="text-[48px] text-white font-['Montserrat'] ml-[45px]">
+                    <h1 id="student" className="text-[48px] text-white font-['Montserrat'] ml-[45px]">
                         Студентам
                     </h1>
                 </div>
