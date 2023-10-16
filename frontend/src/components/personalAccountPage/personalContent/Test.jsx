@@ -21,19 +21,18 @@ export function Test() {
                                         <img src={arrowDown} />
                                     ) : (<img src={arrowUp} />
                                     )}
-
-                                    {isOpen && (
-                                        <div className="bg-[#0086FF] absolute top-20 flex flex-col items-start rounded-lg p-2 w-full">
-                                            {list.map((item, i) => (
-                                                <div className="w-full hover:bg-[#88C7FF] cursor-pointer rounded-r-lg border-l-transparent">
-                                                    <h3>
-                                                        {item.subject}
-                                                    </h3>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
                                 </button>
+                                {isOpen && (
+                                    <div className="bg-[#0086FF] absolute top-20 flex flex-col items-start rounded-lg p-2 w-full">
+                                        {list.map((item, i) => (
+                                            <div className="w-full hover:bg-[#88C7FF] cursor-pointer rounded-r-lg border-l-transparent">
+                                                <h3>
+                                                    {item.subject}
+                                                </h3>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
