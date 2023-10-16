@@ -2,7 +2,7 @@ package com.university.security.config;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import jwt.service.JwtUtil;
+import jwt.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -15,11 +15,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class JwtService {
 
-    private final JwtUtil jwtUtil;
-
-    public String extractUsername(String token) {
-        return jwtUtil.extractUsername(token);
-    }
+    private final JwtUtils jwtUtils;
 
     public String generateToken(UserDetails userDetails) {
         return generateToken(new HashMap<>(), userDetails);
@@ -31,15 +27,7 @@ public class JwtService {
                 .setClaims(extraClaims)
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .signWith(jwtUtil.getSignInKey(), SignatureAlgorithm.HS256)
-                .setExpiration(new Date(System.currentTimeMillis() + jwtUtil.getExpiration()))
-                .signWith(jwtUtil.getSignInKey(), SignatureAlgorithm.HS256)
+                .signWith(jwtUtils.getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
-    }
-
-    public boolean isTokenValid(String token, UserDetails userDetails) {
-        final String username = extractUsername(token);
-
-        return username.equals(userDetails.getUsername());
     }
 }
