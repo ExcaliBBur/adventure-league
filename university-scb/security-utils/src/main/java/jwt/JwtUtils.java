@@ -1,4 +1,4 @@
-package jwt.service;
+package jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -6,17 +6,16 @@ import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.security.Key;
-import java.util.Date;
 import java.util.function.Function;
 
 @RequiredArgsConstructor
 @Getter
-public class JwtUtil {
+public class JwtUtils {
 
     private final String secret;
-    private final long expiration;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -26,14 +25,6 @@ public class JwtUtil {
         final Claims claims = extractAllClaims(token);
 
         return claimsResolver.apply(claims);
-    }
-
-    public boolean isTokenExpired(String token) {
-        return extractExpiration(token).before(new Date());
-    }
-
-    public Date extractExpiration(String token) {
-        return extractClaim(token, Claims::getExpiration);
     }
 
     public Claims extractAllClaims(String token) {
@@ -49,5 +40,11 @@ public class JwtUtil {
         byte[] keyBytes = Decoders.BASE64.decode(secret);
 
         return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    public boolean isTokenValid(String token, UserDetails userDetails) {
+        final String username = extractUsername(token);
+
+        return username.equals(userDetails.getUsername());
     }
 }

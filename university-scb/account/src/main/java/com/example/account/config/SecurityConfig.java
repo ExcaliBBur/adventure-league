@@ -1,6 +1,6 @@
 package com.example.account.config;
 
-import jwt.service.JwtUtil;
+import jwt.JwtUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class SecurityConfig {
 
     @Bean
-    public JwtUtil jwtUtil(@Value("${jwt.secret}") String secret, @Value("${jwt.expiration}") Long expiration) {
-        return new JwtUtil(secret, expiration);
+    public JwtUtils jwtUtil(@Value("${jwt.secret}") String secret) {
+        return new JwtUtils(secret);
     }
 }

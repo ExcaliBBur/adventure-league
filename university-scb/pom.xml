@@ -57,11 +57,11 @@
 
     <modules>
         <module>demo</module>
+        <module>security</module>
         <module>discovery-server</module>
         <module>api-gateway</module>
-        <module>security</module>
         <module>account</module>
-        <module>utils</module>
+        <module>security-utils</module>
     </modules>
 
 </project>

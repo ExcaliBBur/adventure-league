@@ -1,7 +1,8 @@
 package com.university.security.config;
 
 import com.university.security.user.UserRepository;
-import jwt.service.JwtUtil;
+import jwt.JwtAuthenticationFilter;
+import jwt.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -47,7 +48,12 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public JwtUtil jwtUtil(@Value("${jwt.secret}") String secret, @Value("${jwt.expiration}") Long expiration) {
-        return new JwtUtil(secret, expiration);
+    public JwtUtils jwtUtil(@Value("${jwt.secret}") String secret) {
+        return new JwtUtils(secret);
+    }
+
+    @Bean
+    public JwtAuthenticationFilter jwtAuthenticationFilter(JwtUtils jwtUtils, UserDetailsService userDetailsService) {
+        return new JwtAuthenticationFilter(jwtUtils, userDetailsService);
     }
 }
