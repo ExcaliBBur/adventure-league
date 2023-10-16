@@ -25,12 +25,12 @@ spring:
         - id: account-service
           uri: lb://account-service
           predicates:
-            - Path=
+            - Path=/test
 
         - id: security-service
           uri: lb://security-service
           predicates:
-            - Path=api/v1/user
+            - Path=/api/v1/username, /api/v1/auth/register, /api/v1/auth/authenticate
 
         ## Discovery Server Route
 
