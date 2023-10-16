@@ -3,7 +3,7 @@ import AuthFormContainer from './authForm/AuthForm';
 
 const AuthSection = (props) => {
     return (
-        <section styleName="section" className="content-section_auth rounded-[15px]">
+        <section className="content-section_auth rounded-[15px]">
             <AuthFormContainer />
         </section>
     );

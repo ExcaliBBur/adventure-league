@@ -1,13 +1,24 @@
 import main_logo from "../../../image/main_logo.svg";
+import {useNavigate} from "react-router-dom";
 
 export function HeaderPersonal() {
+    const navigate = useNavigate();
+
+    const navigateToMain = () => {
+        navigate('/');
+    }
+
     return (
         <header>
             <div className="flex w-[1850px] h-[6.6875rem] rounded-[25px]">
                 <div className="flex m-auto justify-center align-middle text-center hover:scale-125 duration-500 cursor-default">
-                    <div className="w-[17.5rem] text-white font-['Montserrat-SemiBold'] text-[2.6rem] font-bold leading-[normal]">Совкомбанк</div>
+                    <div className="w-[17.5rem] text-white font-['Montserrat-SemiBold'] text-[2.6rem] font-bold leading-[normal]">
+                        <h1 onClick={navigateToMain}>
+                            Совкомбанк
+                        </h1>
+                    </div>
                     <span>
-                        <img src={main_logo} />
+                        <img src={main_logo} onClick={navigateToMain}/>
                     </span>
                 </div>
                 <div className="flex m-auto justify-center align-middle text-center">

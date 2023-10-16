@@ -1,6 +1,7 @@
 import React from 'react';
 import {useFormik} from 'formik';
 import auth_logo from "../../../../image/auth_logo.svg";
+import {useNavigate} from "react-router-dom";
 
 const validate = values => {
     const errors = {};
@@ -20,6 +21,16 @@ const validate = values => {
 };
 
 const AuthForm = (props) => {
+    const navigate = useNavigate()
+
+    const navigateToRegistration = () => {
+        navigate('/registration');
+    }
+
+    const navigateToPersonal = () => {
+        navigate('/personal');
+    }
+
     const formik = useFormik({
         initialValues: {
             username: '',
@@ -47,7 +58,7 @@ const AuthForm = (props) => {
                             Введите логин или E-mail
                         </label>
                     </p>
-                    <input className="flex-shrink-0 w-[500px] h-[2.5rem] rounded-[50px] bg-[#fefefe]" id="username"
+                    <input className="flex-shrink-0 w-[500px] h-[2.5rem] rounded-[50px] bg-[#fefefe] pl-5 pr-5" id="username"
                            type="text" name="username"
                            value={formik.values.username} onChange={formik.handleChange}/>
                     {formik.errors.username ? <div>{formik.errors.username}</div> : null}
@@ -60,23 +71,27 @@ const AuthForm = (props) => {
                             Введите пароль
                         </label>
                     </p>
-                    <input className="flex-shrink-0 w-[500px] h-[2.5rem] rounded-[50px] bg-[#fefefe] ml-[10px]"
+                    <input className="flex-shrink-0 w-[500px] h-[2.5rem] rounded-[50px] bg-[#fefefe] ml-[10px] pl-5 pr-5"
                            id="password" type="text" name="password"
                            value={formik.values.password} onChange={formik.handleChange}/>
                     {formik.errors.password ? <div>{formik.errors.password}</div> : null}
                 </div>
 
 
-                <div>
-                    <input className="text-black font-['Montserrat'] text-5xl font-bold leading-[normal] ml-auto mr-auto w-[750px] mt-[25px]"
-                           id="enter-check" value={'Вход'} type="submit" name="newAccount"/>
+                <div className="flex justify-center">
+                    <button className="w-[300px] h-[75px] bg-[#FFFFFF] rounded-3xl mt-[50px] hover:scale-125 duration-300 text-5xl"
+                            id="inter-check" name="newAccount" onClick={navigateToPersonal}>
+                        <h1 className="text-black font-bold font-['Montserrat'] text-[48px] leading-[normal]">
+                            Вход
+                        </h1>
+                    </button>
                 </div>
 
                 <div className="enter">
                     <input
                         class="text-white text-center font-['Montserrat'] text-5xl leading-[normal] underline uppercase ml-auto mr-auto w-[750px] mt-[25px] mb-[25px]"
                         value={'Регистрация'} type="button" name="registerAccount"
-                        checked={formik.values.newAccount} onChange={formik.handleChange}/>
+                        checked={formik.values.newAccount} onChange={formik.handleChange} onClick={navigateToRegistration}/>
                 </div>
             </form>
         </div>
