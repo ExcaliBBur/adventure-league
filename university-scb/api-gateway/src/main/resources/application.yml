@@ -18,9 +18,13 @@ spring:
 
       routes:
         - id: demo-service
-          uri: http://demo-service
+          uri: lb://demo-service
           predicates:
             - Path=/demo
+        - id: security-service
+          uri: lb://security-service
+          predicates:
+            - Path=/auth/register, /auth/authenticate
 
         ## Discovery Server Route
 
