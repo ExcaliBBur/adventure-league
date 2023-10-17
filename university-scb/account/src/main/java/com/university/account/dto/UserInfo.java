@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Type;
 
 import java.util.Map;
 
@@ -24,16 +25,18 @@ public class UserInfo {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "middleName")
+    @Column(name = "middle_name")
     private String middleName;
 
-    @Column(name = "info", columnDefinition = "json")
+
+
+    @Column(name = "info", columnDefinition = "text")
     @Convert(converter = HashMapConverter.class)
     private Map<String, Object> info;
 }

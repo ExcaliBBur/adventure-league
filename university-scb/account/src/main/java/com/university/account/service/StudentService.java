@@ -5,29 +5,37 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.university.account.dto.UserInfo;
 import com.university.account.dto.UserResponse;
 import com.university.account.repository.UserInfoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Service
+@RequiredArgsConstructor
 public class StudentService implements CustomService {
 
-    @Autowired
-    private UserInfoRepository userInfoRepository;
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final UserInfoRepository userInfoRepository;
+    private final ObjectMapper objectMapper;
 
     @Override
     public UserResponse invoke(String userEmail) {
         UserInfo userInfo = userInfoRepository.findByEmail(userEmail);
         if (userInfo == null) {
+            Map<String, Object> infoMap = new HashMap<>();
+
             userInfoRepository.save(
                     UserInfo.builder()
                             .email(userEmail)
+                            .info(infoMap)
                             .build());
-            return null; // TODO: 17.10.2023 maybe email in json??
+
+            return UserResponse.builder()
+                    .userEmail(userEmail)
+                    .build();
         }
         return UserResponse.builder()
+                .userEmail(userInfo.getEmail())
                 .firstName(userInfo.getFirstName())
                 .middleName(userInfo.getMiddleName())
                 .lastName(userInfo.getLastName())
@@ -35,7 +43,7 @@ public class StudentService implements CustomService {
                 .build();
     }
 
-    public String serializeCustomerAttributes(Map<String, Object> info) {
+    private String serializeCustomerAttributes(Map<String, Object> info) {
         try {
             return objectMapper.writeValueAsString(info);
         } catch (JsonProcessingException exception){
@@ -43,4 +51,5 @@ public class StudentService implements CustomService {
         }
         return null;
     }
+
 }

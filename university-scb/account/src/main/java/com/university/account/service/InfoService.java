@@ -1,8 +1,10 @@
 package com.university.account.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.university.account.dto.UserInfo;
 import com.university.account.dto.UserResponse;
 import com.university.account.repository.UserInfoRepository;
+import com.university.securityutils.access.entity.User;
 import com.university.securityutils.jwt.JwtUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -20,20 +22,24 @@ public class InfoService {
 
     private final Map<String, CustomService> serviceMap;
     private final JwtUtils jwtUtils;
-    public InfoService(@Autowired JwtUtils jwtUtils) {
+    private final UserInfoRepository userInfoRepository;
+    private final ObjectMapper objectMapper;
+    public InfoService(@Autowired JwtUtils jwtUtils, @Autowired UserInfoRepository userInfoRepository) {
         this.serviceMap = new HashMap<>();
         this.jwtUtils = jwtUtils;
+        this.userInfoRepository = userInfoRepository;
+        this.objectMapper = new ObjectMapper();
         fillServiceMap();
     }
 
     public UserResponse getInformation(HttpServletRequest request) {
         Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication().getAuthorities();
-        for (GrantedAuthority authoritie : authorities) {
-            if (!serviceMap.containsKey(authoritie.toString())) { // TODO: 17.10.2023 FIX ROLES ("USER", "USER_READ")???
+        for (GrantedAuthority authority : authorities) {
+            if (!serviceMap.containsKey(authority.toString())) { // TODO: 17.10.2023 FIX ROLES ("USER", "USER_READ")???
                 continue;
             }
             String userEmail = getUserEmail(request);
-            return serviceMap.get(authoritie.toString()).invoke(userEmail);
+            return serviceMap.get(authority.toString()).invoke(userEmail);
         }
         return null;
     }
@@ -46,7 +52,7 @@ public class InfoService {
 
     private void fillServiceMap() {
 //        this.serviceMap.put("CURATOR", new CuratorService());
-        this.serviceMap.put("USER", new StudentService());
+        this.serviceMap.put("USER", new StudentService(userInfoRepository, objectMapper));
 //        this.serviceMap.put("TEACHER", new TeacherService());
     }
 }
