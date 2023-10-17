@@ -11,7 +11,7 @@ import java.util.Collection;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "_user")
+@Table(schema = "jwt-security", name = "_user")
 public class User {
 
     @Id

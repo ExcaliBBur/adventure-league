@@ -1,4 +1,4 @@
-package com.example.account.converter;
+package com.university.account.converter;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

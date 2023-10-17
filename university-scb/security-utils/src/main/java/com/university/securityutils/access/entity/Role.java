@@ -9,6 +9,7 @@ import java.util.Collection;
 @Entity
 @Getter
 @Setter
+@Table(schema = "jwt-security")
 public class Role {
 
     @Id

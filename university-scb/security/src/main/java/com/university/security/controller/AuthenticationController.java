@@ -1,5 +1,9 @@
-package com.university.security.auth;
+package com.university.security.controller;
 
+import com.university.security.auth.AuthenticationRequest;
+import com.university.security.auth.AuthenticationResponse;
+import com.university.security.auth.AuthenticationService;
+import com.university.security.auth.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
