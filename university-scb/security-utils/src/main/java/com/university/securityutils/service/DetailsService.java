@@ -1,6 +1,9 @@
-package com.university.security.access;
+package com.university.securityutils.service;
 
-import com.university.security.access.repository.UserRepository;
+import com.university.securityutils.access.entity.Privilege;
+import com.university.securityutils.access.entity.Role;
+import com.university.securityutils.access.entity.User;
+import com.university.securityutils.access.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

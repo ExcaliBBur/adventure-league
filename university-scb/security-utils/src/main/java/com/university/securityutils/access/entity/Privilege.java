@@ -1,4 +1,4 @@
-package com.university.security.access;
+package com.university.securityutils.access.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

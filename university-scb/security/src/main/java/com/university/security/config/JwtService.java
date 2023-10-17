@@ -1,9 +1,9 @@
 package com.university.security.config;
 
-import com.university.security.access.User;
+import com.university.securityutils.access.entity.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import jwt.JwtUtils;
+import com.university.securityutils.jwt.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

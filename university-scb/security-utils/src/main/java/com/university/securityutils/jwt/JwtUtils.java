@@ -1,4 +1,4 @@
-package jwt;
+package com.university.securityutils.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

@@ -1,4 +1,4 @@
-package com.university.security.access;
+package com.university.securityutils.access.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -17,10 +17,6 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    private String firstName;
-
-    private String lastName;
 
     private String email;
 

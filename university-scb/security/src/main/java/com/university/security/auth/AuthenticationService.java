@@ -1,9 +1,9 @@
 package com.university.security.auth;
 
-import com.university.security.access.repository.RoleRepository;
-import com.university.security.access.repository.UserRepository;
+import com.university.securityutils.access.repository.RoleRepository;
+import com.university.securityutils.access.repository.UserRepository;
 import com.university.security.config.JwtService;
-import com.university.security.access.User;
+import com.university.securityutils.access.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,11 +24,9 @@ public class AuthenticationService {
 
     public AuthenticationResponse register(RegisterRequest request) {
         var user = User.builder()
-                .firstName(request.getFirstname())
-                .lastName(request.getLastname())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .roles(List.of(roleRepository.findByName("ROLE_USER")))
+                .roles(List.of(roleRepository.findByName("USER")))
                 .build();
 
         userRepository.save(user);

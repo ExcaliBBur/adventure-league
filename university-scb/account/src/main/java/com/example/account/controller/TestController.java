@@ -1,10 +1,9 @@
 package com.example.account.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
-import jwt.JwtUtils;
+import com.university.securityutils.jwt.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.lang.NonNull;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
