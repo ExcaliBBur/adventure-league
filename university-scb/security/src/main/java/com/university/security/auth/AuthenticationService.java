@@ -10,6 +10,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.management.relation.RoleNotFoundException;
 import java.util.List;
 
 @Service
@@ -22,11 +23,11 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    public AuthenticationResponse register(RegisterRequest request) {
+    public AuthenticationResponse register(UserRequest request) throws RoleNotFoundException {
         var user = User.builder()
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .roles(List.of(roleRepository.findByName("USER")))
+                .roles(List.of(roleRepository.findByName("USER").orElseThrow(RoleNotFoundException::new)))
                 .build();
 
         userRepository.save(user);
@@ -38,13 +39,13 @@ public class AuthenticationService {
                 .build();
     }
 
-    public AuthenticationResponse authenticate(AuthenticationRequest request) {
+    public AuthenticationResponse authenticate(UserRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
         );
         var user = userRepository.findByEmail(request.getEmail());
 
-        var jwtToken = jwtService.generateToken(user);
+        var jwtToken = jwtService.generateToken(user.orElseThrow());
 
         return AuthenticationResponse.builder()
                 .token(jwtToken)
