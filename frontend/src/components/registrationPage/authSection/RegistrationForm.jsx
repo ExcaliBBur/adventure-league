@@ -21,23 +21,28 @@ export function RegistrationForm() {
         regForm.addEventListener("submit", event => {
             event.preventDefault();
         });
+
         let login = document.getElementById("login").value;
         let pass = document.getElementById("pass").value;
-
         let user = {
-            login: login,
-            pass: pass
+            email: login, password: pass
         }
+        let length = JSON.stringify(user).length
 
         console.log(JSON.stringify(user))
-
-         let response = await fetch(url, {
+        let response;
+        response = await fetch(url, {
             method: 'POST',
             body: JSON.stringify(user)
+        }).then(result => {
+            console.log(response)
+        }).catch(error => {
+            console.log(error)
         });
 
-        let answer = await response.json();
-        alert(answer);
+
+        let answer = await response;
+        console.log(answer);
     }
     return (
         <div className="justify-center flex">

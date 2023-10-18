@@ -13,6 +13,12 @@ spring:
     web-application-type: reactive
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: '*'
+            allowedHeaders: '*'
+            allowedMethods: '*'
 
       ## Services Routes
 

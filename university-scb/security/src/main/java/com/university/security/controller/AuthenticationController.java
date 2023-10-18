@@ -1,8 +1,10 @@
-package com.university.security.auth;
+package com.university.security.controller;
 
+import com.university.security.auth.AuthenticationResponse;
+import com.university.security.auth.AuthenticationService;
+import com.university.security.auth.UserRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.management.relation.RoleNotFoundException;
-import java.util.Objects;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/auth")
