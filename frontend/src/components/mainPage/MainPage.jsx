@@ -11,7 +11,7 @@ export function MainPage() {
             <div>
                 <ApplicationForm />
             </div>
-            <div>
+            <div className="">
                 <HeaderMain />
                 <MainContent />
                 <BankInfo />
