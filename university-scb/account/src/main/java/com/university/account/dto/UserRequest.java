@@ -7,7 +7,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserResponse {
+public class UserRequest {
 
     private String email;
 
@@ -17,7 +17,7 @@ public class UserResponse {
 
     private String lastName;
 
-    private String info;
-
     private String informationAbout;
+
+    private String password;
 }

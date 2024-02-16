@@ -34,7 +34,8 @@ public class UserInfo {
     @Column(name = "middle_name")
     private String middleName;
 
-
+    @Column(name = "information_about")
+    private String informationAbout;
 
     @Column(name = "info", columnDefinition = "text")
     @Convert(converter = HashMapConverter.class)
